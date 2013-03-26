@@ -27,7 +27,7 @@ use Log::Message::Simple qw (:STD);
 use Convert::MRC::Variables;
 
 # ABSTRACT: CONVERT MRC TO TBX-BASIC
-our $VERSION = '4.01'; # VERSION
+our $VERSION = '4.02'; # VERSION
 
 use open ':encoding(utf8)', ':std';    # incoming/outgoing data will be UTF-8
 
@@ -1050,7 +1050,7 @@ Convert::MRC - CONVERT MRC TO TBX-BASIC
 
 =head1 VERSION
 
-version 4.01
+version 4.02
 
 =head1 SYNOPSIS
 
