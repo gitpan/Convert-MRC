@@ -6,7 +6,6 @@ MANIFEST
 Makefile.PL
 README
 README.mkdn
-TBX-convert-MRC-4.0.tar.gz
 dist.ini
 lib/Convert/MRC.pm
 lib/Convert/MRC/Variables.pm

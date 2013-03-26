@@ -11,7 +11,7 @@ package Convert::MRC::Variables;
 use strict;
 use warnings;
 # ABSTRACT: GLOBAL CONSTANTS USED BY Convert::MRC
-our $VERSION = '4.0'; # VERSION
+our $VERSION = '4.01'; # VERSION
 use base 'Exporter';
 our @EXPORT = qw(
   %corresp
@@ -166,7 +166,7 @@ Convert::MRC::Variables - GLOBAL CONSTANTS USED BY Convert::MRC
 
 =head1 VERSION
 
-version 4.0
+version 4.01
 
 =head1 AUTHOR
 

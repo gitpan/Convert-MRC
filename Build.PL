@@ -30,7 +30,7 @@ my %module_build_args = (
     "Nathan Rasmussen, Nathan Glenn <garfieldnate\@gmail.com>"
   ],
   "dist_name" => "Convert-MRC",
-  "dist_version" => "4.0",
+  "dist_version" => "4.01",
   "license" => "perl",
   "module_name" => "Convert::MRC",
   "recommends" => {},

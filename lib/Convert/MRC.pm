@@ -27,7 +27,7 @@ use Log::Message::Simple qw (:STD);
 use Convert::MRC::Variables;
 
 # ABSTRACT: CONVERT MRC TO TBX-BASIC
-our $VERSION = '4.0'; # VERSION
+our $VERSION = '4.01'; # VERSION
 
 use open ':encoding(utf8)', ':std';    # incoming/outgoing data will be UTF-8
 
@@ -1050,7 +1050,7 @@ Convert::MRC - CONVERT MRC TO TBX-BASIC
 
 =head1 VERSION
 
-version 4.0
+version 4.01
 
 =head1 SYNOPSIS
 
@@ -1130,6 +1130,7 @@ Optional argument: string file path or GLOB; '-' means STDIN
 Sets and/or returns the file handle used to read the MRC data from.
 
 =head2 C<batch>
+
 Processes each of the input files, printing the converted TBX file to a file with the same name and the suffix ".tbx".
 Warnings are also printed to a file with the same name and the suffix ".log".
 

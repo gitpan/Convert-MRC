@@ -4,7 +4,7 @@ Convert::MRC - CONVERT MRC TO TBX-BASIC
 
 # VERSION
 
-version 4.0
+version 4.01
 
 # SYNOPSIS
 
@@ -84,6 +84,7 @@ Optional argument: string file path or GLOB; '-' means STDIN
 Sets and/or returns the file handle used to read the MRC data from.
 
 ## `batch`
+
 Processes each of the input files, printing the converted TBX file to a file with the same name and the suffix ".tbx".
 Warnings are also printed to a file with the same name and the suffix ".log".
 
