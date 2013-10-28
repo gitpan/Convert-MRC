@@ -12,27 +12,14 @@ my %WriteMakefileArgs = (
   "ABSTRACT" => "CONVERT MRC TO TBX-BASIC",
   "AUTHOR" => "Nathan Rasmussen, Nathan Glenn <garfieldnate\@gmail.com>",
   "BUILD_REQUIRES" => {
-    "Data::Section::Simple" => 0,
-    "File::Find" => 0,
-    "File::Slurp" => 0,
-    "File::Spec::Functions" => 0,
-    "File::Temp" => 0,
-    "File::Touch" => 0,
-    "FindBin" => 0,
-    "Module::Build" => "0.3601",
-    "Test::Base" => 0,
-    "Test::Base::Filter" => 0,
-    "Test::LongString" => 0,
-    "Test::More" => "0.96",
-    "Test::XML" => 0,
-    "autodie" => 0
+    "Module::Build" => "0.3601"
   },
   "CONFIGURE_REQUIRES" => {
     "Module::Build" => "0.3601"
   },
   "DISTNAME" => "Convert-MRC",
   "EXE_FILES" => [
-    "scripts/mrc2tbx"
+    "bin/mrc2tbx"
   ],
   "LICENSE" => "perl",
   "NAME" => "Convert::MRC",
@@ -47,12 +34,40 @@ my %WriteMakefileArgs = (
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "4.02",
+  "TEST_REQUIRES" => {
+    "Data::Section::Simple" => 0,
+    "File::Find" => 0,
+    "File::Slurp" => 0,
+    "File::Spec::Functions" => 0,
+    "File::Temp" => 0,
+    "File::Touch" => 0,
+    "FindBin" => 0,
+    "Test::Base" => 0,
+    "Test::Base::Filter" => 0,
+    "Test::LongString" => 0,
+    "Test::More" => "0.96",
+    "Test::XML" => 0,
+    "autodie" => 0
+  },
+  "VERSION" => "4.03",
   "test" => {
     "TESTS" => "t/*.t"
   }
 );
 
+
+unless ( eval { ExtUtils::MakeMaker->VERSION(6.63_03) } ) {
+  my $tr = delete $WriteMakefileArgs{TEST_REQUIRES};
+  my $br = $WriteMakefileArgs{BUILD_REQUIRES};
+  for my $mod ( keys %$tr ) {
+    if ( exists $br->{$mod} ) {
+      $br->{$mod} = $tr->{$mod} if $tr->{$mod} > $br->{$mod};
+    }
+    else {
+      $br->{$mod} = $tr->{$mod};
+    }
+  }
+}
 
 unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
   my $br = delete $WriteMakefileArgs{BUILD_REQUIRES};

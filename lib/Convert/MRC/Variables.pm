@@ -10,9 +10,10 @@ package Convert::MRC::Variables;
 
 use strict;
 use warnings;
-# ABSTRACT: GLOBAL CONSTANTS USED BY Convert::MRC
-our $VERSION = '4.02'; # VERSION
+# ABSTRACT: Provide global constants used by Convert::MRC
+our $VERSION = '4.03'; # VERSION
 use base 'Exporter';
+## no critic (ProhibitAutomaticExportation)
 our @EXPORT = qw(
   %corresp
   $langCode
@@ -162,11 +163,11 @@ __END__
 
 =head1 NAME
 
-Convert::MRC::Variables - GLOBAL CONSTANTS USED BY Convert::MRC
+Convert::MRC::Variables - Provide global constants used by Convert::MRC
 
 =head1 VERSION
 
-version 4.02
+version 4.03
 
 =head1 AUTHOR
 
